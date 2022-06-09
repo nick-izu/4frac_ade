@@ -120,6 +120,7 @@ REGION outflow
   FILE pboundary_right_e.ex
 END
 
+#===========================transport conditions============================
 TRANSPORT_CONDITION initial
   TYPE dirichlet 
     CONSTRAINT_LIST
@@ -135,6 +136,7 @@ TRANSPORT_CONDITION inject
   /
 END
 
+#================================constraints===================================
 CONSTRAINT initial
   CONCENTRATIONS
     TRACER 1.d-20 T

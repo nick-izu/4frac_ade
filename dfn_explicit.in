@@ -2,7 +2,6 @@
 # Matthew Sweeney, Satish Karra, Jeffrey Hyman (LANL)
 #================================================
 
-
 SIMULATION
   SIMULATION_TYPE SUBSURFACE
   PROCESS_MODELS
@@ -17,13 +16,13 @@ SIMULATION
   /
   CHECKPOINT
     FORMAT HDF5
-    TIMES y 1.0d0
+    TIMES y 10.0d0
   /
 END
 
-
 SUBSURFACE
 
+#===============================chemistry================================
 CHEMISTRY
   PRIMARY_SPECIES
     TRACER

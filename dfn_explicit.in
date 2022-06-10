@@ -27,7 +27,12 @@ GRID
   TYPE unstructured_explicit full_mesh_vol_area.uge 
   GRAVITY 0.d0 0.d0 0.d0
 END
-
+#=========================== numerical methods ===============================
+NUMERICAL_METHODS TRANSPORT
+  NEWTON_SOLVER
+    DTOL 1.d20
+  /
+END
 #=========================== fluid properties =================================
 FLUID_PROPERTY
   DIFFUSION_COEFFICIENT 1.6d-9
@@ -74,8 +79,23 @@ END
 #=========================== output options ===================================
 OUTPUT
 #  TIMES y 0.01 0.05 0.1 0.2 0.5 1
-  TIMES y 0.000001 0.00001 0.0001 0.001 0.01 0.1 1 10 100 1000 10000 100000
+  #TIMES y 0.000001 0.00001 0.0001 0.001 0.01 0.1 1 10 100 1000 10000 100000
 #  FORMAT TECPLOT BLOCK
+  OBSERVATION_FILE
+    PERIODIC TIMESTEP 1
+  /
+  MASS_BALANCE_FILE
+    PERIODIC TIMESTEP 1
+  /
+  SNAPSHOT_FILE
+    FORMAT HDF5
+    PRINT_COLUMN_IDS
+    PERIODIC TIME 1. y between 0. y and 10. y
+    PERIODIC TIME 10. y between 0. y and 100. y
+    PERIODIC TIME 100. y between 0. y and 1000. y
+    PERIODIC TIME 1000. y between 0. y and 10000. y
+    PERIODIC TIME 10000. y between 0. y and 100000. y
+    PERIODIC TIME 100000. y between 0. y and 500000. y
   PRINT_PRIMAL_GRID
   FORMAT VTK
   MASS_FLOWRATE
@@ -91,8 +111,12 @@ END
 TIME
   INITIAL_TIMESTEP_SIZE  1.d-8 y
   FINAL_TIME 1.0d5 y
-  MAXIMUM_TIMESTEP_SIZE 100.0d0 y
-  STEADY_STATE
+  MAXIMUM_TIMESTEP_SIZE 1. y at 1. y
+  MAXIMUM_TIMESTEP_SIZE 5. y at 10. y
+  MAXIMUM_TIMESTEP_SIZE 50. y at 100. y
+  MAXIMUM_TIMESTEP_SIZE 500. y at 1000. y
+  MAXIMUM_TIMESTEP_SIZE 5000. y at 10000. y
+  #STEADY_STATE
 END
 
 #=========================== regions ==========================================

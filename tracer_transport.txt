@@ -7,9 +7,13 @@ SIMULATION
    PROCESS_MODELS
    SUBSURFACE_TRANSPORT transport
    MODE GIRT
-   OPTIONS
+ 
   /
  /
+ CHECKPOINT
+    FORMAT HDF5
+  /
+ 
 END
 
 SUBSURFACE
@@ -164,39 +168,3 @@ STRATA
 END
 
 END_SUBSURFACE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

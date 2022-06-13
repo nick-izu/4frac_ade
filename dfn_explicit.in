@@ -79,12 +79,15 @@ END
 
 #=========================== output options ===================================
 OUTPUT
-    MASS_BALANCE_FILE
-     PERIODIC_TIME 10 y
-     TOTAL_MASS_REGIONS
-      all
-    /
-  /
+    #MASS_BALANCE_FILE
+     #PERIODIC_TIME 10 y
+     #TOTAL_MASS_REGIONS
+     # all
+    #/
+  #/
+   PERIODIC_OBSERVATION TIMESTEP 1
+   PRINT_COLUMN_IDS
+   PERIODIC TIME 10 y
    FORMAT TECPLOT BLOCK
    FLUXES
    FLOWRATE

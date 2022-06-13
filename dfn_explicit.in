@@ -80,6 +80,7 @@ END
 #=========================== output options ===================================
 OUTPUT
     MASS_BALANCE_FILE
+     PERIODIC_TIME 10 y
      TOTAL_MASS_REGIONS
       all
     /

@@ -20,12 +20,12 @@ CHEMISTRY
   PRIMARY_SPECIES
     Tracer
   /
- RADIOACTIVE_DECAY_REACTION
- REACTION Tracer
- RATE_CONSTANT 6.9d-3 ! half life at 100 y
- /
+# RADIOACTIVE_DECAY_REACTION
+ #REACTION Tracer
+# RATE_CONSTANT 6.9d-3 ! half life at 100 y
+ #/
 
- DATABASE /dfnWorks/examples/4frac_ade/hanford.dat
+# DATABASE /dfnWorks/examples/4frac_ade/hanford.dat
   OUTPUT
     TOTAL
     Tracer
@@ -45,7 +45,7 @@ NUMERICAL_METHODS TRANSPORT
 END
 #=========================== fluid properties =================================
 FLUID_PROPERTY
-  DIFFUSION_COEFFICIENT 1.6d-9
+  DIFFUSION_COEFFICIENT 1.d-9
 END
 
 DATASET Permeability
@@ -55,8 +55,8 @@ END
 #=========================== material properties ==============================
 MATERIAL_PROPERTY soil1
   ID 1
-  POROSITY 0.005
-  TORTUOSITY 0.2d0
+  POROSITY 1
+  TORTUOSITY 1
   CHARACTERISTIC_CURVES default
   PERMEABILITY
     DATASET Permeability
@@ -79,12 +79,12 @@ END
 
 #=========================== output options ===================================
 OUTPUT
-    MASS_BALANCE_FILE
-      PERIODIC TIME 10 y
-      TOTAL_MASS_REGIONS
-       all
-     /
-   /
+    #MASS_BALANCE_FILE
+     # PERIODIC TIME 10 y
+     # TOTAL_MASS_REGIONS
+     #  all
+    # /
+  # /
    FORMAT TECPLOT BLOCK
    FLUXES
    FLOWRATE
@@ -95,9 +95,9 @@ OUTPUT
 #=========================== times ============================================
 TIME
   INITIAL_TIMESTEP_SIZE  1.d-3 y
-  FINAL_TIME 1.0d4 y
+  FINAL_TIME 3.0d2 y
   MAXIMUM_TIMESTEP_SIZE 1.d0 y 
- #STEADY_STATE
+ 
 END
 
 #=========================== regions ==========================================
@@ -153,7 +153,7 @@ TRANSPORT_CONDITION inject
   TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
     0.d0 inlet
-    0.005d0 initial 
+    1.5d4 initial 
   /
 END
 
@@ -166,7 +166,7 @@ END
 
 CONSTRAINT inlet
   CONCENTRATIONS
-    Tracer 1.d-3 T
+    Tracer 1.d0 T
   /
 END
 

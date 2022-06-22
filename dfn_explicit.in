@@ -79,12 +79,6 @@ END
 
 #=========================== output options ===================================
 OUTPUT
-    #MASS_BALANCE_FILE
-     # PERIODIC TIME 10 y
-     # TOTAL_MASS_REGIONS
-     #  all
-    # /
-  # /
    FORMAT TECPLOT BLOCK
    FLUXES
    FLOWRATE
@@ -149,11 +143,17 @@ TRANSPORT_CONDITION initial
   /
 END
 
-TRANSPORT_CONDITION inject
+#TRANSPORT_CONDITION inlet
+  #TYPE dirichlet
+   # CONSTRAINT_LIST
+    #0.d0 inlet
+#/
+#END
+
+TRANSPORT_CONDITION boundary
   TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
-    0.d0 inlet
-    1.5d4 initial 
+    0.d0 inlet 
   /
 END
 

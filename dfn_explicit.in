@@ -150,7 +150,7 @@ END
 #/
 #END
 
-TRANSPORT_CONDITION boundary
+TRANSPORT_CONDITION inject
   TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
     0.d0 inlet 

@@ -45,7 +45,7 @@ NUMERICAL_METHODS TRANSPORT
 END
 #=========================== fluid properties =================================
 FLUID_PROPERTY
-  DIFFUSION_COEFFICIENT 1.d-9
+  DIFFUSION_COEFFICIENT 1.6d-9
 END
 
 DATASET Permeability
@@ -143,17 +143,11 @@ TRANSPORT_CONDITION initial
   /
 END
 
-#TRANSPORT_CONDITION inlet
-  #TYPE dirichlet
-   # CONSTRAINT_LIST
-    #0.d0 inlet
-#/
-#END
-
 TRANSPORT_CONDITION inject
   TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
     0.d0 inlet 
+    1.5d4 initial
   /
 END
 

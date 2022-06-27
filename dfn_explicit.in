@@ -10,6 +10,7 @@ SIMULATION
     /
     SUBSURFACE_TRANSPORT transport
       MODE GIRT
+      OPTIONS
     /
   /
 END
@@ -147,7 +148,7 @@ TRANSPORT_CONDITION inject
   TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
     0.d0 inlet 
-    1.5d4 initial
+    0.005d0 initial
   /
 END
 

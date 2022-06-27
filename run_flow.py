@@ -61,4 +61,11 @@ filename_perm = cwd + '/perm.dat'
 rewrite_file(filename_aper,b)
 rewrite_file(filename_perm,perm,three=True)
 
+restart_file = "/dfnWorks/examples/4frac_ade/dfn_restart.in"
+
+DFN.pflotran(transient=True,restart=True,restart_file=restart_file)
+DFN.parse_pflotran_vtk_python()       
+DFN.pflotran_cleanup()
+DFN.pflotran_cleanup(index_finish=100,filename=restart_file)
+
 DFN.dfn_flow()

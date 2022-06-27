@@ -14,9 +14,6 @@ SIMULATION
       /
     /
   /
-#  CHECKPOINT
-#    TIMES s 100.0d0
-#  /
   RESTART dfn_explicit-restart.h5 0.
 END
 
@@ -86,7 +83,6 @@ OUTPUT
   FLOWRATE
   MASS_FLOWRATE
   MASS_BALANCE
-  
   /
 END
 

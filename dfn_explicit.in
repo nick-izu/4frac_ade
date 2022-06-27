@@ -144,11 +144,10 @@ TRANSPORT_CONDITION initial
   /
 END
 
-TRANSPORT_CONDITION inject
+TRANSPORT_CONDITION inlet
   TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
     0.d0 inlet 
-    0.005d0 initial
   /
 END
 

@@ -138,16 +138,17 @@ END
 #==========================transport conditions================================
 
 TRANSPORT_CONDITION initial
-  TYPE dirichlet 
+  TYPE dirichlet_zero_gradient 
     CONSTRAINT_LIST
     0.d0 initial
   /
 END
 
 TRANSPORT_CONDITION inlet
-  TYPE dirichlet_zero_gradient
+  TYPE dirichlet
     CONSTRAINT_LIST
     0.d0 inlet 
+    2.5d-1 initial # at 0.25 years
   /
 END
 

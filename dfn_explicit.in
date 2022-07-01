@@ -90,8 +90,8 @@ OUTPUT
 #=========================== times ============================================
 TIME
   INITIAL_TIMESTEP_SIZE  1.d-3 y
-  FINAL_TIME 1.0d2 y
-  MAXIMUM_TIMESTEP_SIZE 1.d0 y 
+  FINAL_TIME 1.0d3 y
+  MAXIMUM_TIMESTEP_SIZE 10.d0 y 
  
 END
 
@@ -138,7 +138,7 @@ END
 #==========================transport conditions================================
 
 TRANSPORT_CONDITION initial
-  TYPE dirichlet_zero_gradient 
+  TYPE zero_gradient 
     CONSTRAINT_LIST
     0.d0 initial
   /
@@ -148,7 +148,6 @@ TRANSPORT_CONDITION inlet
   TYPE dirichlet
     CONSTRAINT_LIST
     0.d0 inlet 
-    2.5d-1 initial # at 0.25 years
   /
 END
 

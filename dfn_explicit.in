@@ -55,8 +55,8 @@ END
 #=========================== material properties ==============================
 MATERIAL_PROPERTY soil1
   ID 1
-  POROSITY 1
-  TORTUOSITY 1
+  POROSITY 0.005
+  TORTUOSITY 0.2
   CHARACTERISTIC_CURVES default
   PERMEABILITY
     DATASET Permeability
@@ -88,8 +88,8 @@ OUTPUT
 
 #=========================== times ============================================
 TIME
-  INITIAL_TIMESTEP_SIZE  1.d-3 y
-  FINAL_TIME 1.0d3 y
+  INITIAL_TIMESTEP_SIZE  1.d-8 y
+  FINAL_TIME 1.0d6 y
   MAXIMUM_TIMESTEP_SIZE 10.d0 y 
  
 END

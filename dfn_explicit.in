@@ -20,12 +20,6 @@ CHEMISTRY
   PRIMARY_SPECIES
     Tracer
   /
-# RADIOACTIVE_DECAY_REACTION
- #REACTION Tracer
-# RATE_CONSTANT 6.9d-3 ! half life at 100 y
- #/
-
-# DATABASE /dfnWorks/examples/4frac_ade/hanford.dat
   OUTPUT
     TOTAL
     Tracer
@@ -38,11 +32,11 @@ GRID
   GRAVITY 0.d0 0.d0 0.d0
 END
 #=========================== numerical methods ===============================
-NUMERICAL_METHODS TRANSPORT
-  NEWTON_SOLVER
-    ITOL 1.d-8
-  /
-END
+#NUMERICAL_METHODS TRANSPORT
+  #NEWTON_SOLVER
+   # ITOL 1.d-8
+  #/
+#END
 #=========================== fluid properties =================================
 FLUID_PROPERTY
   DIFFUSION_COEFFICIENT 1.6d-9
@@ -89,7 +83,7 @@ OUTPUT
 #=========================== times ============================================
 TIME
   INITIAL_TIMESTEP_SIZE  1.d-8 y
-  FINAL_TIME 1.0d6 y
+  FINAL_TIME 1.0d5 y
   MAXIMUM_TIMESTEP_SIZE 10.d0 y 
  
 END
@@ -144,7 +138,7 @@ TRANSPORT_CONDITION initial
 END
 
 TRANSPORT_CONDITION inject
-  TYPE dirichlet
+  TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
     0.d0 inlet 
   /

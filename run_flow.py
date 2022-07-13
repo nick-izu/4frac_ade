@@ -64,6 +64,4 @@ rewrite_file(filename_perm,perm,three=True)
 porosity = 1
 tortuosity = 1
 
-LONGITUDINAL_DISPERSIVITY 0.001 
-
 DFN.dfn_flow()

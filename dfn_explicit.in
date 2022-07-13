@@ -131,7 +131,7 @@ END
 #==========================transport conditions================================
 
 TRANSPORT_CONDITION initial
-  TYPE zero_gradient 
+  TYPE dirchlet_zero_gradient 
     CONSTRAINT_LIST
     0.d0 initial
   /
@@ -140,7 +140,8 @@ END
 TRANSPORT_CONDITION inject
   TYPE dirichlet_zero_gradient
     CONSTRAINT_LIST
-    0.d0 inlet 
+    0.d0 pulse
+    1.d-2 initial
   /
 END
 

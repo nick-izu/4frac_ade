@@ -20,6 +20,11 @@ CHEMISTRY
   PRIMARY_SPECIES
     Tracer
   /
+  RADIOACTIVE_DECAY_REACTION
+  REACTION Tracer
+  RATE_CONSTANT 6.9d-3 ! half life at 100 y
+  /
+ #DATABASE /dfnWorks/examples/4frac_ade/hanford.dat
   OUTPUT
     TOTAL
     Tracer

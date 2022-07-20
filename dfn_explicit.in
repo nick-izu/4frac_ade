@@ -20,10 +20,10 @@ CHEMISTRY
   PRIMARY_SPECIES
     Tracer
   /
-  RADIOACTIVE_DECAY_REACTION
-  REACTION Tracer
-  RATE_CONSTANT 6.9d-3 ! half life at 100 y
-  /
+  #RADIOACTIVE_DECAY_REACTION
+  #REACTION Tracer
+  #RATE_CONSTANT 6.9d-3 ! half life at 100 y
+  #/
  #DATABASE /dfnWorks/examples/4frac_ade/hanford.dat
   OUTPUT
     TOTAL
@@ -37,11 +37,11 @@ GRID
   GRAVITY 0.d0 0.d0 0.d0
 END
 #=========================== numerical methods ===============================
-#NUMERICAL_METHODS TRANSPORT
-  #NEWTON_SOLVER
-   # ITOL 1.d-8
-  #/
-#END
+NUMERICAL_METHODS TRANSPORT
+  NEWTON_SOLVER
+    ITOL 1.d-8
+  /
+END
 #=========================== fluid properties =================================
 FLUID_PROPERTY
   DIFFUSION_COEFFICIENT 1.6d-9
@@ -56,7 +56,7 @@ MATERIAL_PROPERTY soil1
   ID 1
   POROSITY 1.d0
   TORTUOSITY 1.d0
-  LONGITUDINAL_DISPERSIVITY 0.0001
+  LONGITUDINAL_DISPERSIVITY 10
   CHARACTERISTIC_CURVES default
   PERMEABILITY
     DATASET Permeability
